@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stark Prompt Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="stark-canvas"></canvas>
+
+    <div class="hud">
+      <header class="hud__header">
+        <div class="logo">Stark Prompt Lab</div>
+        <div class="status">
+          <span class="status__label">Состояние узла:</span>
+          <span class="status__value" id="current-node">Загрузка...</span>
+        </div>
+      </header>
+
+      <section class="hud__panel">
+        <div class="panel__column">
+          <h2>Сборка промпт-машины</h2>
+          <p class="panel__intro">
+            Наблюдайте за тем, как виртуальная лаборатория в реальном времени формирует цепочку
+            модулей генерации промптов. Каждый блок — это смоделированный узел будущей интеграции
+            с n8n.
+          </p>
+          <div class="signal-grid">
+            <div class="signal-grid__row">
+              <span>Когнитивный резонанс</span>
+              <div class="signal-bar"><span id="signal-a"></span></div>
+            </div>
+            <div class="signal-grid__row">
+              <span>Энергия связей</span>
+              <div class="signal-bar"><span id="signal-b"></span></div>
+            </div>
+            <div class="signal-grid__row">
+              <span>Поток данных</span>
+              <div class="signal-bar"><span id="signal-c"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel__column panel__timeline">
+          <h2>Последовательность узлов</h2>
+          <ol id="timeline" class="timeline"></ol>
+        </div>
+      </section>
+
+      <footer class="hud__footer">
+        <div class="footer__group">
+          <span class="footer__label">Режим визуализации</span>
+          <div class="footer__controls">
+            <button id="toggle-assembly">Пауза</button>
+            <button id="reset-sequence">Перезапуск</button>
+          </div>
+        </div>
+        <div class="footer__group footer__group--right">
+          <span>Мок-данные. Подключение к n8n отключено.</span>
+        </div>
+      </footer>
+    </div>
+
+    <div class="scanner-overlay"></div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
