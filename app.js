@@ -268,11 +268,14 @@ resetSequenceBtn.addEventListener('click', () => {
 
 window.addEventListener('resize', onResize);
 
-renderer.setAnimationLoop(() => {
+function tick() {
   const delta = clock.getDelta();
   animate(delta);
   renderer.render(scene, camera);
-});
+  requestAnimationFrame(tick);
+}
+
+tick();
 
 function animate(delta) {
   controls.update();
